@@ -10,6 +10,16 @@ Office.onReady((info) => {
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     document.getElementById("run").onclick = run;
+
+    // Register an event handler to identify when messages are selected.
+    Office.context.mailbox.addHandlerAsync(Office.EventType.SelectedItemsChanged, run, (asyncResult) => {
+      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+        console.log(asyncResult.error.message);
+        return;
+      }
+
+      console.log("Event handler added.");
+    });
   }
 });
 
@@ -18,11 +28,23 @@ export async function run() {
    * Insert your Outlook code here
    */
 
-  const item = Office.context.mailbox.item;
-  let insertAt = document.getElementById("item-subject");
-  let label = document.createElement("b").appendChild(document.createTextNode("Subject: "));
-  insertAt.appendChild(label);
-  insertAt.appendChild(document.createElement("br"));
-  insertAt.appendChild(document.createTextNode(item.subject));
-  insertAt.appendChild(document.createElement("br"));
+  // Clear list of previously selected messages, if any.
+  const list = document.getElementById("selected-items");
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
+  }
+
+  // Retrieve the subject line of the selected messages and log it to a list in the task pane.
+  Office.context.mailbox.getSelectedItemsAsync((asyncResult) => {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+      console.log(asyncResult.error.message);
+      return;
+    }
+
+    asyncResult.value.forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = item.subject;
+      list.appendChild(listItem);
+    });
+  });
 }

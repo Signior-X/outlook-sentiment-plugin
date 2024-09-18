@@ -30,7 +30,7 @@
         "permissions": {
             "resourceSpecific": [
                 {
-                    "name": "MailboxItem.Read.User",
+                    "name": "Mailbox.ReadWrite.User",
                     "type": "Delegated"
                 }
             ]
@@ -48,7 +48,7 @@
                 "capabilities": [
                     {
                         "name": "Mailbox",
-                        "minVersion": "1.3"
+                        "minVersion": "1.13"
                     }
                 ]
             },
@@ -58,7 +58,7 @@
                         "capabilities": [
                             {
                                 "name": "Mailbox",
-                                "minVersion": "1.3"
+                                "minVersion": "1.13"
                             }
                         ]
                     },
@@ -72,24 +72,10 @@
                         {
                             "id": "TaskPaneRuntimeShow",
                             "type": "openPage",
-                            "pinnable": false,
-                            "view": "dashboard"
-                        }
-                    ]
-                },
-                {
-                    "id": "CommandsRuntime",
-                    "type": "general",
-                    "code": {
-                        "page": "https://localhost:3000/commands.html",
-                        "script": "https://localhost:3000/commands.js"
-                    },
-                    "lifetime": "short",
-                    "actions": [
-                        {
-                            "id": "action",
-                            "type": "executeFunction",
-                            "displayName": "action"
+                            "pinnable": true,
+                            "view": "dashboard",
+                            "supportsNoItemContext": true,
+                            "multiselect": true
                         }
                     ]
                 }
@@ -144,30 +130,6 @@
                                                 "description": "Opens a pane displaying all available properties."
                                             },
                                             "actionId": "TaskPaneRuntimeShow"
-                                        },
-                                        {
-                                            "id": "ActionButton",
-                                            "type": "button",
-                                            "label": "Perform an action",
-                                            "icons": [
-                                                {
-                                                    "size": 16,
-                                                    "url": "https://localhost:3000/assets/icon-16.png"
-                                                },
-                                                {
-                                                    "size": 32,
-                                                    "url": "https://localhost:3000/assets/icon-32.png"
-                                                },
-                                                {
-                                                    "size": 80,
-                                                    "url": "https://localhost:3000/assets/icon-80.png"
-                                                }
-                                            ],
-                                            "supertip": {
-                                                "title": "Perform an action",
-                                                "description": "Perform an action when clicked."
-                                            },
-                                            "actionId": "action"
                                         }
                                     ]
                                 }
