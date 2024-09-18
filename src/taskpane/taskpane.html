@@ -12,6 +12,7 @@
 
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
 
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
@@ -35,18 +36,11 @@
                 <i class="ms-Icon ms-Icon--Ribbon ms-font-xl"></i>
                 <span class="ms-font-m">Achieve more with Office integration</span>
             </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Unlock ms-font-xl"></i>
-                <span class="ms-font-m">Unlock features and functionality</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Design ms-font-xl"></i>
-                <span class="ms-font-m">Create and visualize like a pro</span>
-            </li>
         </ul>
         <p class="ms-font-l">Modify the source files, then click <b>Run</b>.</p>
         <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Run</span>
+            <!-- <span class="ms-Button-label">Run</span> -->
+            <fluent-button>Hello Fluent</fluent-button>
         </div>
         <p><label id="item-subject"></label></p>
     </main>
