@@ -6,6 +6,7 @@
 :root {
     --neutralDark: #242424;
     --neutralPrimaryAlt: #616161;
+    --neutralLighter: #F5F5F5;
 }
 
 html,
@@ -34,6 +35,11 @@ body {
     flex-flow: row;
     padding-top: 8px;
     padding-bottom: 12px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: var(--neutralLighter);
 }
 
 .card-content {

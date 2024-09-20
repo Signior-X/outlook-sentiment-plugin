@@ -20,7 +20,7 @@ Office.onReady((info) => {
         badges: [
           {
             badgeText: "Urgent",
-            badgeColor: "red"
+            badgeColor: "ghost"
           },
           {
             badgeText: "High revenue",
