@@ -73,9 +73,31 @@
                             "id": "TaskPaneRuntimeShow",
                             "type": "openPage",
                             "pinnable": true,
-                            "view": "dashboard",
-                            "supportsNoItemContext": true,
-                            "multiselect": true
+                            "view": "dashboard"
+                        }
+                    ]
+                },
+                {
+                    "requirements": {
+                        "capabilities": [
+                            {
+                                "name": "Mailbox",
+                                "minVersion": "1.13"
+                            }
+                        ]
+                    },
+                    "id": "TaskPaneRuntime2",
+                    "type": "general",
+                    "code": {
+                        "page": "https://localhost:3000/taskpane.html"
+                    },
+                    "lifetime": "short",
+                    "actions": [
+                        {
+                            "id": "TaskPaneRuntimeShow2",
+                            "type": "openPage",
+                            "pinnable": true,
+                            "view": "dashboard"
                         }
                     ]
                 }
@@ -110,7 +132,7 @@
                                         {
                                             "id": "msgReadOpenPaneButton",
                                             "type": "button",
-                                            "label": "Show Taskpane",
+                                            "label": "Priority List",
                                             "icons": [
                                                 {
                                                     "size": 16,
@@ -126,10 +148,34 @@
                                                 }
                                             ],
                                             "supertip": {
-                                                "title": "Show Taskpane",
+                                                "title": "Priority List",
                                                 "description": "Opens a pane displaying all available properties."
                                             },
                                             "actionId": "TaskPaneRuntimeShow"
+                                        },
+                                        {
+                                            "id": "msgReadOpenPaneButton2",
+                                            "type": "button",
+                                            "label": "Thread Sentiment",
+                                            "icons": [
+                                                {
+                                                    "size": 16,
+                                                    "url": "https://localhost:3000/assets/icon-16.png"
+                                                },
+                                                {
+                                                    "size": 32,
+                                                    "url": "https://localhost:3000/assets/icon-32.png"
+                                                },
+                                                {
+                                                    "size": 80,
+                                                    "url": "https://localhost:3000/assets/icon-80.png"
+                                                }
+                                            ],
+                                            "supertip": {
+                                                "title": "Thread Sentiment",
+                                                "description": "Opens a pane displaying all available properties."
+                                            },
+                                            "actionId": "TaskPaneRuntimeShow2"
                                         }
                                     ]
                                 }
