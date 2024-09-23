@@ -101,12 +101,93 @@ Office.onReady((info) => {
 
     const cards = document.getElementById("cards");
     cards.innerHTML = cardsHtml;
+
+    const cardElements = document.getElementsByClassName("card");
+    for (const element of cardElements)
+    {
+      element.onclick = showAnalysis;
+    }
+
+    // Rendering the chart
+    (async () => {
+      Highcharts.chart('container', {
+        chart: {
+          type: 'area'
+        },
+        title: {
+          text: null
+        },
+        xAxis: {
+          type: "datetime",
+          title: {
+            text: null
+          },
+          categories: [
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', 
+            '21', '22', '23', '24', '25', '26', '27'
+          ]
+        },
+        yAxis: {
+          title: {
+            text: null
+          },
+          min: -1,
+          max: 1
+        },
+        series: [{
+          name: 'Overall Tone Score',
+          data: [
+            0.5, -0.2, 0.7, -0.1, 0.3, -0.4, 0.8, -0.6, 0.9, -0.3,
+            1.0, -0.5, -0.7, -0.8, -0.8, 0.6, -0.9, 0.7, -0.7, 0.9, -1.0,
+            0.3, -0.6, 0.4, -0.8, 0.5, -0.3, -0.3, 0.7
+          ],
+          color: '#28a745',
+          negativeColor: '#dc3545'
+        }],
+        tooltip: {
+          xDateFormat: '%A, %b %e, %Y', // Format the date in the tooltip
+          pointFormat: '{point.x:%b %e, %Y}: ({point.y:.2f})' // Custom format for the tooltip
+        },
+        plotOptions: {
+          area: {
+            marker: {
+              radius: 2
+            },
+          },
+          column: {
+            borderColor: 'transparent',
+            colorByPoint: false,
+            zones: [{
+              value: 0, // Anything below zero
+              color: '#dc3545' // Red for negative values
+            }, {
+              value: 1, // Anything equal to or above zero
+              color: '#28a745' // Green for positive values
+            }]
+          }
+        }
+      });
+    })();
   }
+
+  document.getElementById("back-btn").onclick = GoBack;
 });
 
-export async function run() {
+export async function showAnalysis() {
   /**
    * Insert your Outlook code here
    */
   // Here we can write any logic if we want
+  document.getElementById("priority-list-container").classList.add("hidden");
+  document.getElementById("sentiment-container").classList.remove("hidden");
+}
+
+export async function GoBack() {
+  /**
+   * Insert your Outlook code here
+   */
+  // Here we can write any logic if we want
+  document.getElementById("priority-list-container").classList.remove("hidden");
+  document.getElementById("sentiment-container").classList.add("hidden");
 }

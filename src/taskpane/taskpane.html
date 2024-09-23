@@ -15,22 +15,80 @@
     <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
 
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    <link rel="stylesheet"
+        href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
 
     <!-- Template styles -->
     <link href="taskpane.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 
 <body class="ms-font-m ms-welcome ms-Fabric">
-    <header>
-        <h3 class="heading">Emails Sorted by Priority</h3>
-    </header>
-    <main>
-        <!-- Present a list of email tabs of the task pane -->
-         <div id="cards">
+    <div id="priority-list-container" class="hidden">
+        <header>
+            <h3 class="heading">Emails Sorted by Priority</h3>
+        </header>
+        <div id="cards">
             <!-- Added by taskpane.js -->
-         </div>
-    </main>
+        </div>
+    </div>
+
+    <div id="sentiment-container">
+        <header style="display: flex; flex-flow: row; align-items:center; padding-left:8px;">
+            <img id="back-btn" alt="back" width="24px" style="padding-left:12px; cursor:pointer;" src="../../assets/vector-back-icon.jpg" />
+            <h3 class="heading font-bold">User Tone Analysis</h3>
+        </header>
+        <main class="w-100 outline-red-900">
+            <div id="parent">
+                <div id="chart">
+                    <figure class="highcharts-figure">
+                        <div id="container"></div>
+                    </figure>
+                </div>
+
+                <fluent-accordion style="max-width: 350px;">
+                    <fluent-card>
+                        <fluent-accordion-item expanded>
+                            <span slot="heading" class="block text-center font-bold">Customer Profile</span>
+                            <div class="panel text-left text-balance">
+                                <b class="pill">Possible Revenue = High</b>
+                                <b class="pill">New Products = Interested</b>
+                                <b class="pill">Association = Long Term</b>
+                                <b class="pill">Customer Type = MSME</b>
+                            </div>
+                        </fluent-accordion-item>
+                    </fluent-card>
+                    <fluent-card class="mt-3 rounded-[4px]">
+                        <fluent-accordion-item expanded>
+                            <span slot="heading" class="block text-center font-bold">Customer Characteristics</span>
+                            <div class="panel flex-wrap text-left text-balance leading-5 space-x-2 space-y-2">
+                                <b class="pill">possibly long-term</b>
+                                <b class="pill">significant investment</b>
+                                <b class="pill">MSME</b>
+                                <b class="pill">Open for new products</b>
+                            </div>
+                        </fluent-accordion-item>
+                    </fluent-card>
+                    <fluent-card class="mt-3">
+                        <fluent-accordion-item expanded>
+                            <span slot="heading" class="block text-center font-bold">Summary of Conversation</span>
+                            <div class="panel text-left text-balance">
+                                <p>
+                                    The customer is keen on <b class="pill">new products</b> and <b
+                                        class="pill">technologies</b> from Microsoft. They are <b
+                                        class="pill">satisfied</b> with current offerings and remain loyal to the brand.
+                                    This might be a great opportunity to convert to.
+                                </p>
+                            </div>
+                        </fluent-accordion-item>
+                    </fluent-card>
+                </fluent-accordion>
+            </div>
+        </main>
+    </div>
 </body>
 
 </html>
