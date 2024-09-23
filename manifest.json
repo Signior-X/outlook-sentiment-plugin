@@ -76,30 +76,6 @@
                             "view": "dashboard"
                         }
                     ]
-                },
-                {
-                    "requirements": {
-                        "capabilities": [
-                            {
-                                "name": "Mailbox",
-                                "minVersion": "1.13"
-                            }
-                        ]
-                    },
-                    "id": "TaskPaneRuntime2",
-                    "type": "general",
-                    "code": {
-                        "page": "https://localhost:3000/taskpane2.html"
-                    },
-                    "lifetime": "short",
-                    "actions": [
-                        {
-                            "id": "TaskPaneRuntimeShow2",
-                            "type": "openPage",
-                            "pinnable": true,
-                            "view": "dashboard"
-                        }
-                    ]
                 }
             ],
             "ribbons": [
@@ -152,30 +128,6 @@
                                                 "description": "Opens a pane displaying all available properties."
                                             },
                                             "actionId": "TaskPaneRuntimeShow"
-                                        },
-                                        {
-                                            "id": "msgReadOpenPaneButton2",
-                                            "type": "button",
-                                            "label": "Thread Sentiment",
-                                            "icons": [
-                                                {
-                                                    "size": 16,
-                                                    "url": "https://localhost:3000/assets/icon-16.png"
-                                                },
-                                                {
-                                                    "size": 32,
-                                                    "url": "https://localhost:3000/assets/icon-32.png"
-                                                },
-                                                {
-                                                    "size": 80,
-                                                    "url": "https://localhost:3000/assets/icon-80.png"
-                                                }
-                                            ],
-                                            "supertip": {
-                                                "title": "Thread Sentiment",
-                                                "description": "Opens a pane displaying all available properties."
-                                            },
-                                            "actionId": "TaskPaneRuntimeShow2"
                                         }
                                     ]
                                 }
