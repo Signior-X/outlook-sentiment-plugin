@@ -19,11 +19,15 @@ Office.onReady((info) => {
         summary: "Here we will give a quick summary of what have been done! This will help the reader a glimpse about the thread.",
         badges: [
           {
-            badgeText: "Urgent",
-            badgeColor: "ghost"
+            badgeText: "Long Term Association",
+            badgeColor: "accent"
           },
           {
-            badgeText: "High revenue",
+            badgeText: "High Revenue",
+            badgeColor: "accent"
+          },
+          {
+            badgeText: "Urgent",
             badgeColor: "accent"
           }
         ],
@@ -35,12 +39,16 @@ Office.onReady((info) => {
         summary: "Here we will give a quick summary of what have been done! This will help the reader a glimpse about the thread.",
         badges: [
           {
-            badgeText: "Urgent",
-            badgeColor: "red"
+            badgeText: "MSME Customer",
+            badgeColor: "accent"
           },
           {
             badgeText: "High revenue",
-            badgeColor: "blue"
+            badgeColor: "accent"
+          },
+          {
+            badgeText: "Urgent",
+            badgeColor: "accent"
           }
         ],
       },
@@ -51,12 +59,16 @@ Office.onReady((info) => {
         summary: "The work has been finalized, just discussions left for the final quote.",
         badges: [
           {
-            badgeText: "Urgent",
-            badgeColor: "red"
+            badgeText: "New Products",
+            badgeColor: "accent"
           },
           {
-            badgeText: "High revenue",
-            badgeColor: "blue"
+            badgeText: "Moderate revenue",
+            badgeColor: "accent"
+          },
+          {
+            badgeText: "New Customer",
+            badgeColor: "accent"
           }
         ],
       },
@@ -67,12 +79,28 @@ Office.onReady((info) => {
         summary: "Town Hall meeting - discussing the future of Products, new Customers and Ideas.",
         badges: [
           {
-            badgeText: "Urgent",
-            badgeColor: "red"
+            badgeText: "Big Customer",
+            badgeColor: "accent"
           },
           {
-            badgeText: "High revenue",
-            badgeColor: "blue"
+            badgeText: "Just Starting",
+            badgeColor: "accent"
+          }
+        ],
+      },
+      {
+        imgSrc: "../../assets/bryce_img.jpeg",
+        senderName: "Bryce Cullen",
+        emailTitle: "Sales Project Demo",
+        summary: "Demo of the Sales project is scheduled for tomorrow. Please be prepared with your queries.",
+        badges: [
+          {
+            badgeText: "Long Term Association",
+            badgeColor: "accent"
+          },
+          {
+            badgeText: "Moderate revenue",
+            badgeColor: "accent"
           }
         ],
       }
